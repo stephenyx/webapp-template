@@ -29,6 +29,8 @@
 - **Architecture & rules**
   - `docs/ARCHITECTURE.md`
   - `docs/AGENTS.md`
+  - `CLAUDE.md`
+  - `GEMINI.md`
   - `.serena/memories/` – Serena MCP context
 
 - **What to build**

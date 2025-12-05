@@ -1,0 +1,60 @@
+{
+  "name": "webapp-template",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agentic webapp template with React 19, Vite, Express, Drizzle, and PostgreSQL",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "test": "turbo run test",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "typecheck": "turbo run typecheck",
+    "db:generate": "npm run db:generate --workspace=@repo/db",
+    "db:migrate": "npm run db:migrate --workspace=@repo/db",
+    "db:push": "npm run db:push --workspace=@repo/db",
+    "db:studio": "npm run db:studio --workspace=@repo/db",
+    "db:seed": "npm run db:seed --workspace=@repo/db",
+    "db:seed:reset": "npm run db:seed:reset --workspace=@repo/db",
+    "docker:dev": "docker-compose -f docker/docker-compose.yml up",
+    "docker:dev:build": "docker-compose -f docker/docker-compose.yml up --build",
+    "docker:dev:down": "docker-compose -f docker/docker-compose.yml down",
+    "docker:prod": "docker-compose -f docker/docker-compose.prod.yml up -d",
+    "docker:prod:build": "docker-compose -f docker/docker-compose.prod.yml up -d --build",
+    "docker:prod:down": "docker-compose -f docker/docker-compose.prod.yml down",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "turbo": "^2.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "packageManager": "npm@10.2.0",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
